@@ -2,7 +2,7 @@ CREATE TABLE users (
   user_id SERIAL PRIMARY KEY,
   name varchar(50) NOT NULL,
   email varchar(50) UNIQUE NOT NULL,
-  password varchar(15) NOT NULL,
+  password varchar(60) NOT NULL,
   created_date TIMESTAMP,
   modified_date TIMESTAMP
 );
