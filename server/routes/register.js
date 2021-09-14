@@ -45,3 +45,5 @@ registerRouter.post('/', async (req, res) => {
     }
   });
 });
+
+module.exports = registerRouter;
