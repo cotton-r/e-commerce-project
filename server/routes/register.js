@@ -11,7 +11,7 @@ registerRouter.post('/', async (req, res) => {
   const { name, email, password, password2 } = req.body;
 
   // check that no fields are missing
-  if (!name || !email || !password || !password2 ) {
+  if (!name || !email || !password || !password2) {
     res.json({ message: 'Please complete all fields' });
   }
   // check if passwords match
