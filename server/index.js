@@ -9,6 +9,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
+app.use('/register', registerRouter);
+
 app.get('/', (req, res) => {
   return res.status(200).send({'message': 'first endpoint is working!'})
 });
