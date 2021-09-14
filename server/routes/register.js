@@ -35,7 +35,7 @@ registerRouter.post('/', async (req, res) => {
       res.json({ message: 'Email already registered' });
     } else {
       pool.query('INSERT INTO users (name, email, password, created_date) VALUES ($1, $2, $3, $4)', 
-        [name, email, hashedPassword, now().format('YYYY-MM-DD HH:mm:ss')], 
+        [name, email, hashedPassword, dayjs().format('YYYY-MM-DD HH:mm:ss')], 
         (error, results) => {
         if (error) {
           throw error;
