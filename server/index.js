@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { pool } = require('./db/index');
+const registerRouter = require('./routes/register');
 
 const app = express();
 
