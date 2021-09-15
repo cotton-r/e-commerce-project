@@ -3,7 +3,7 @@ const pool = require('../db/index');
 const productsRouter = express.Router();
 
 // get all products
-productsRouter.get('/', (req, res) => {
+productsRouter.get('/', (req, res, next) => {
   pool.query('SELECT * FROM products ORDER BY product_id ASC', (error, results) => {
     if (error) {
       throw error;
@@ -14,7 +14,9 @@ productsRouter.get('/', (req, res) => {
   
 // get products by category
 productsRouter.get('/:category', (req, res) => {
-  pool.query(`SELECT * FROM products WHERE category_name = ${req.query.category_name}`, (error, results) => {
+  pool.query('SELECT * FROM products WHERE category_name = $1 ORDER BY product_id ASC', 
+  [req.params.category], 
+  (error, results) => {
     if (error) {
       throw error;
     }
