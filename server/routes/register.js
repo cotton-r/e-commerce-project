@@ -4,9 +4,6 @@ const bcrypt = require('bcrypt');
 const dayjs = require('dayjs');
 const registerRouter = express.Router();
 
-// set up dayjs New Date Object
-const now = dayjs();
-
 registerRouter.post('/', async (req, res) => {
   const { name, email, password, password2 } = req.body;
 
