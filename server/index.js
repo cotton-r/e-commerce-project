@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const registerRouter = require('./routes/register');
 const productsRouter = require('./routes/products');
+const loginRouter = require('./routes/login');
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(cors());
 // routes
 app.use('/register', registerRouter);
 app.use('/products', productsRouter);
+app.use('/login', loginRouter);
 
 app.get('/', (req, res) => {
   return res.status(200).send({'message': 'first endpoint is working!'})
