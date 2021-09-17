@@ -39,8 +39,15 @@ const initialize = () => {
 
   passport.use(new localStrategy({ usernameField: 'email' }, authenticateUser));
 
-  passport.serializeUser((user, done) => {  });
-  passport.deserializeUser((id, done) => {  });
+  passport.serializeUser((user, done) => done(null, user.user_id)); // store user.user_id in session cookie
+  passport.deserializeUser((user_id, done) => {
+    pool.query('SELECT * FROM users WHERE user_id = $1', [user_id], (error, results) => {
+      if (error) {
+        throw error;
+      }
+      return done(null, results.rows[0]);
+    });
+  });
 }
 
 module.exports = initialize;
