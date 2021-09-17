@@ -3,9 +3,9 @@ const localStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 const pool = require('../db/index');
 
-const initialize = async () => {
+const initialize = () => {
 
-  const authenticateUser = (email, password, done) => {
+  const authenticateUser = async (email, password, done) => {
     // query the database
     pool.query('SELECT * FROM users WHERE email = $1', [email], (error, results) => {
       if (error) {
