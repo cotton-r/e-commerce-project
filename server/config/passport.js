@@ -3,7 +3,7 @@ const localStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 const pool = require('../db/index');
 
-const initialize = () => {
+const initialize = async () => {
 
   const authenticateUser = (email, password, done) => {
     // query the database
