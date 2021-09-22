@@ -27,6 +27,10 @@ CREATE TABLE cart (
   item_qty INTEGER DEFAULT 1
 );
 
+INSERT INTO categories VALUES ('boots');
+INSERT INTO categories VALUES ('footballs');
+INSERT INTO categories VALUES ('kits');
+
 INSERT INTO products (product_id, category_name, product_name, description, image, price) VALUES (1, 'boots', 'Nike Phantom GT2 Elite FG', 'Building off the Phantom GT, the Nike Phantom GT2 Elite FG features an updated design and raised patterning to help create optimal spin to control the flight of the ball. Off-centre lacing provides a clean strike zone for skilful dribbling, passing and shooting.', 'https://res.cloudinary.com/dmylytdb6/image/upload/v1631300985/e-commerce/phantom-gt2-elite-fg-football-boot-CbSK2V_o8syjy.jpg', 224.95);
 INSERT INTO products (product_id, category_name, product_name, description, image, price) VALUES (2, 'boots', 'Nike Mercurial Superfly 8 Academy MG', 'The Nike Mercurial Superfly 8 Academy MG sets you up for speed with specialised traction for quick cuts and sudden stops. Grippy texture on top gives you precise control of the ball, and a stretchy collar adapts to your ankle for a seamless fit that moves with you.', 'https://res.cloudinary.com/dmylytdb6/image/upload/v1631313087/e-commerce/mercurial-superfly-8-academy-mg-multi-ground-football-boot-6rZwRP_cq7iye.jpg', 79.95);
 INSERT INTO products (product_id, category_name, product_name, description, image, price) VALUES (3, 'boots', 'X SPEEDFLOW+ FG', 'From brain to boot to ball. And back again. When sharpness of mind meets quickness of body, you become the fastest version of yourself. Find your flow and leave the rest behind. Whatever "speed" means to you, these adidas X football boots keep you out in front. For the sprinter, a Carbitex carbon fibre insert and raised forefoot spark explosive propulsion. For the wizard, a stabilising Agilitycage straps you in for jinking runs. For the fox-in-the-box, the laceless adidas Primeknit skin adds comfort while you wait to strike.', 'https://res.cloudinary.com/dmylytdb6/image/upload/v1631313235/e-commerce/X_SPEEDFLOW__FG_Black_FY3342_01_standard_swxvxp.jpg', 230.00);
