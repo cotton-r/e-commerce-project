@@ -11,6 +11,7 @@ const session = require('express-session');
 const registerRouter = require('./routes/register');
 const productsRouter = require('./routes/products');
 const loginRouter = require('./routes/login');
+const logoutRouter = require('./routes/logout');
 
 const initializePassport = require('./config/passport');
 const passport = require('passport');
@@ -36,6 +37,7 @@ app.use(passport.session());
 app.use('/register', registerRouter);
 app.use('/products', productsRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
 
 app.get('/', (req, res) => {
   return res.status(200).send({'message': 'first endpoint is working!'})
