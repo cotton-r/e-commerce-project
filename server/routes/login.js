@@ -8,7 +8,7 @@ loginRouter.post('/', passport.authenticate('local', {
   failureRedirect: ':/login',
   failureFlash: true
 }), (req, res) => {
-
+  res.status(201).json(req.user);
 })
 
 module.exports = loginRouter;
