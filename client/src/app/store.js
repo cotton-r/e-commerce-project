@@ -1,6 +1,6 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 
-import prodcutsReducer from './';
+import prodcutsReducer from '../components/productsSlice';
 
 export const store = configureStore({
     reducer: {
