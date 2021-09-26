@@ -11,6 +11,19 @@ export const productsSlice = createSlice({
     name: 'products',
     initialState: {
         products: [],
+        loadProductsStatus: 'idle',
+    },
+    extraReducers: {
+        [loadAllProducts.pending]: (state, action) => {
+            state.loadProductsStatus = 'loading';
+        },
+        [loadAllProducts.fulfilled]: (state, action) => {
+            state.loadProductsStatus = 'succeeded';
+            state.products = action.payload;
+        },
+        [loadAllProducts.rejected]: (state, action) => {
+            state.loadProductsStatus = 'failed';
+        },
     }
 });
 
