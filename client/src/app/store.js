@@ -1,5 +1,9 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 
-export const store = configureStore({
+import prodcutsReducer from './';
 
+export const store = configureStore({
+    reducer: {
+        products: prodcutsReducer,
+    },
 });
