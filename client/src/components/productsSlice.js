@@ -7,3 +7,14 @@ export const loadAllProducts = createAsyncThunk('products/loadAllProducts', asyn
     return json;
 });
 
+export const productsSlice = createSlice({
+    name: 'products',
+    initialState: {
+        products: [],
+    }
+});
+
+export const selectProducts = (state) => state.products.products;
+
+export default productsSlice.reducer;
+
