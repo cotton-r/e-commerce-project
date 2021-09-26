@@ -4,7 +4,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 const express = require('express');
 const cors = require('cors');
-const initializePassport = require('./config/passport');
 const flash = require('express-flash');
 const session = require('express-session');
 

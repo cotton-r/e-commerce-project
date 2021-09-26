@@ -5,7 +5,7 @@ const pool = require('../db/index');
 
 const initialize = () => {
 
-  const authenticateUser = async (email, password, done) => {
+  const authenticateUser = (email, password, done) => {
     // query the database
     pool.query('SELECT * FROM users WHERE email = $1', [email], (error, results) => {
       if (error) {
@@ -17,26 +17,25 @@ const initialize = () => {
         const user = results.rows[0];
       
         //compare password with hashed password in database to check for a match
-        try {
-          if (await bcrypt.compare(password, user.password)) {
-            // if passwords match, return user
-            return done(null, user);
-
+        bcrypt.compare(password, user.password, (error, isMatch) => {
+          if (error) {
+            throw error;
+          }
+          // if the passwords match
+          if (isMatch) {
+            return done(null, user); 
           } else {
             // if passwords dont match, return message
+            console.log('wrong password');
             return done(null, false, { message: 'Password incorrect' });
           }
-
-        } catch(e) {
-          return done(e);
-        }
+        });
       } else {
-        // no user found in the database with that email
-        return done(null, false, { message: 'Email not registered' });
+        // if no user is found in database
+        return done(null, false, { message: 'Email is not registered' });
       }
     });
   };
-
   passport.use(new localStrategy({ usernameField: 'email' }, authenticateUser));
 
   passport.serializeUser((user, done) => done(null, user.user_id)); // store user.user_id in session cookie
@@ -48,6 +47,6 @@ const initialize = () => {
       return done(null, results.rows[0]);
     });
   });
-}
+};
 
 module.exports = initialize;
