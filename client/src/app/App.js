@@ -1,17 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+import Home from '../views/home';
+
 const App = () => {
     return (
         <Router>
             <div className='App'>
-                <Nav />
+                {/* <Nav /> */}
                 <Switch>
                     <Route path='/' exact component={Home} />
-                    <Route path='/register' exact component={Register} />
+                    {/* <Route path='/register' exact component={Register} />
                     <Route path='/login' exact component={Login} />
                     <Route path='/logout' exact component={Logout} />
-                    <Route path='/products' exact component={Products} />
+                    <Route path='/products' exact component={Products} /> */}
                 </Switch>
             </div>
         </Router>
