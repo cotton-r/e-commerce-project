@@ -3,11 +3,9 @@ const loginRouter = express.Router();
 const passport = require('passport');
 
 loginRouter.post('/', passport.authenticate('local', {
-  successRedirect: ':/',
-  failureRedirect: ':/login',
-  failureFlash: true
+  failureRedirect: '/login',
 }), (req, res) => {
-  res.status(201).json(req.user);
+  res.status(201).json(req.user).redirect('/');
 })
 
 module.exports = loginRouter;
