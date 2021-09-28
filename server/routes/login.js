@@ -5,7 +5,7 @@ const passport = require('passport');
 loginRouter.post('/', passport.authenticate('local', {
   failureRedirect: '/login',
 }), (req, res) => {
-  res.status(201).json(req.user).redirect('/');
+  res.status(201).json(req.user);
 })
 
 module.exports = loginRouter;
