@@ -21,10 +21,12 @@ const Products = () => {
     return (
         <div className='page-container'>
             {allProducts.map((product) => (
-                <div key={product.product_id}>
-                    <p>{product.product_name}</p>
-                    <p>{product.price}</p>
-                </div>
+                <Link to={`/products/${product.category_name}/${product.product_name}`}>
+                    <div key={product.product_id}>
+                        <p>{product.product_name}</p>
+                        <p>{product.price}</p>
+                    </div>
+                </Link>
             ))}
         </div>
     );
