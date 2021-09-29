@@ -13,7 +13,7 @@ productsRouter.get('/', (req, res, next) => {
 });
   
 // get products by category
-productsRouter.get('/:category', (req, res) => {
+productsRouter.get('/category', (req, res) => {
   pool.query('SELECT * FROM products WHERE category_name = $1 ORDER BY product_id ASC', 
   [req.params.category], 
   (error, results) => {
