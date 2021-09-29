@@ -22,7 +22,7 @@ const Products = () => {
     return (
         <div className='page-container'>
             {allProducts.map((product) => (
-                <Link to={`/products/${product.category_name}/${product.product_name}`}>
+                <Link to={`/products/${product.category_name}/${encodeURIComponent(product.product_name)}`}>
                     <div key={product.product_id}>
                         <p>{product.product_name}</p>
                         <p>{product.price}</p>
