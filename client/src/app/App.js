@@ -5,7 +5,7 @@ import Home from '../views/home';
 import Products from '../components/products/products';
 import Register from '../views/register';
 import Login from '../views/login';
-import ProductsCategories from '../components/productsCategories/productsCategories';
+import Category from '../components/category/category';
 
 const App = () => {
     return (
@@ -18,7 +18,7 @@ const App = () => {
                     <Route path='/login' exact component={Login} />
                     {/* <Route path='/logout' exact component={Logout} /> */}
                     <Route path='/products' exact component={Products} />
-                    <Route path='/products/:category' exact component={ProductsCategories} />
+                    <Route path='/products/:category' exact component={Category} />
                 </Switch>
             </div>
         </Router>
