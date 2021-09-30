@@ -1,26 +1,21 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadCategoryProducts, selectCategoryProducts } from './categoriesSlice';
+import { loadCategoryProducts, selectCategoryProducts } from './categorySlice';
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
-const ProductsCategories = () => {
+const Category = () => {
     const dispatch = useDispatch();
     const products = useSelector(selectCategoryProducts);
-    const params = useParams();
-    const category = params.category;
+    const { category } = useParams();
+    console.log(category);
+    console.log(products);
 
     // load all products from database
     useEffect(() => {
         dispatch(loadCategoryProducts(category));
-    }, [dispatch]);
-
-    // create variable for each category of product
-    const boots = products.filter((product) => product.category_name === 'boots');
-    const footballs = products.filter((product) => product.category_name === 'footballs');
-    const kits = products.filter((product) => product.category_name === 'kits');
-
+    }, [dispatch, category]);
     
     return (
         <div className='page-container'>
@@ -36,4 +31,4 @@ const ProductsCategories = () => {
     );
 };
 
-export default ProductsCategories;
+export default Category;
