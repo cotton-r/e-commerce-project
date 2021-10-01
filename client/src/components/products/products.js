@@ -12,12 +12,6 @@ const Products = () => {
     useEffect(() => {
         dispatch(loadAllProducts());
     }, [dispatch]);
-
-    // create variable for each category of product
-    const boots = allProducts.filter((product) => product.category_name === 'boots');
-    const footballs = allProducts.filter((product) => product.category_name === 'footballs');
-    const kits = allProducts.filter((product) => product.category_name === 'kits');
-
     
     return (
         <div className='page-container'>

@@ -15,7 +15,7 @@ const IndividualProduct = ({product}) => {
                 <p className='individual-product-description'>{product.description}</p>
             </div>
             <div className='add-to-cart-container'>
-                <button onClick={dispatch(addToCart(product))}>Add to Cart</button>
+                {/* <button onClick={dispatch(addToCart(product))}>Add to Cart</button> */}
             </div>
         </div>
     );
