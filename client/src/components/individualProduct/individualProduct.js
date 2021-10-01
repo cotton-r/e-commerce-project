@@ -3,11 +3,18 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import { loadIndividualProduct, selectIndividualProduct } from './individualProductSlice';
 
 const IndividualProduct = () => {
     const dispatch = useDispatch();
-    const { product } = useParams();
+    const { category, product } = useParams();
     const decodedProduct = decodeURIComponent(product);
+    const individualProduct = useSelector(selectIndividualProduct);
+    
+    // load the single product from database
+    useEffect(() => {
+        dispatch(loadIndividualProduct(decodedProduct));
+    }, [dispatch, decodedProduct]);
 
     // return (
     //     <div className='page-container'>
