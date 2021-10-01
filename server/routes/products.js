@@ -25,7 +25,7 @@ productsRouter.get('/:category', (req, res) => {
 });
 
 productsRouter.get('/:category/:individualProduct', (req, res) => {
-  pool.query('SELECT * FROM products WHERE product_name = $1', [req.params.product_name], (error, results) => {
+  pool.query('SELECT * FROM products WHERE product_name = $1', [req.params.individualProduct], (error, results) => {
     if (error) {
       throw error;
     }
