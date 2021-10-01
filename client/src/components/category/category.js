@@ -9,8 +9,6 @@ const Category = () => {
     const dispatch = useDispatch();
     const products = useSelector(selectCategoryProducts);
     const { category } = useParams();
-    console.log(category);
-    console.log(products);
 
     // load all products from database
     useEffect(() => {
