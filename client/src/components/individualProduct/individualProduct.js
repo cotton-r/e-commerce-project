@@ -9,7 +9,6 @@ const IndividualProduct = () => {
     const { product } = useParams();
     const decodedProduct = decodeURIComponent(product);
     const individualProduct = useSelector(selectIndividualProduct);
-    console.log(individualProduct);
 
     // load the single product from database
     useEffect(() => {
@@ -19,11 +18,23 @@ const IndividualProduct = () => {
     return (
         <div className='page-container'>
             {individualProduct.map((product) => (
-                <div>
-                    <p>{product.product_name}</p>
-                    <p>{product.price}</p>
-                    <img src={product.image} alt={product.product_name} height='500px' width='auto'/>
-                    <p>{product.description}</p>
+                <div> 
+                    <div>
+                        <p>{product.product_name}</p>
+                        <p>{product.price}</p>
+                        <img src={product.image} alt={product.product_name} height='500px' width='auto'/>
+                        <p>{product.description}</p>
+                    </div>
+                    <div>
+                        <button className='add-to-cart-button' onClick={() => {
+                            if (!sessionStorage.getItem(JSON.stringify(product.product_id))) {
+                                sessionStorage.setItem(JSON.stringify(product.product_id), 1);
+                            } else {
+                                const i = sessionStorage.getItem(JSON.stringify(product.product_id));
+                                sessionStorage.setItem(JSON.stringify(product.product_id), Number(i) + 1);
+                            }
+                        }}>Add to cart</button>
+                    </div>
                 </div>
             ))}
         </div>
