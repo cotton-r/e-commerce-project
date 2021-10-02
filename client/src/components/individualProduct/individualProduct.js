@@ -7,7 +7,6 @@ import { loadIndividualProduct, selectIndividualProduct } from './individualProd
 const IndividualProduct = () => {
     const dispatch = useDispatch();
     const { product } = useParams();
-    const decodedProduct = decodeURIComponent(product);
     const individualProduct = useSelector(selectIndividualProduct);
 
     // load the single product from database
