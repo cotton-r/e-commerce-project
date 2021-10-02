@@ -1,20 +1,18 @@
 import React from 'react';
 
-const CartItem = (product) => {
+const CartItem = (props) => {
 
-    const newProduct = Object.values(product);
-    console.log(newProduct)
+    const { product, quantity } = props;
 
     return (
         <div className='cartItem'>
             {
-                newProduct.map((item) => (
-                    <div>
-                        <img src={item.image} alt={item.product_name} height='70px' width='auto' />
-                        <p>{item.product_name}</p>
-                        <p>{item.price}</p>
+                    <div key={product.product_id}>
+                        <img src={product.image} alt={product.product_name} height='70px' width='auto' />
+                        <p>{product.product_name}</p>
+                        <p>{product.price}</p>
+                        <p>{quantity}</p>
                     </div>
-                ))
             }
         </div>
     );

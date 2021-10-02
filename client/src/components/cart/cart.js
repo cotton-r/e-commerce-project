@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { connectAdvanced, useDispatch, useSelector } from 'react-redux';
 import { loadAllProducts, selectProducts } from '../products/productsSlice';
 import CartItem from './cartItem';
 
@@ -23,11 +23,17 @@ const Cart = () => {
         newItems.push(allProducts.filter(product => product.product_id == item));
     });
 
+    let totalPrice = Number();
+    newItems.forEach(nested => nested.forEach(item => totalPrice += Number(item.price) * sessionStorage.getItem(item.product_id)));
+
     return (
         <div>
             {newItems.map(nested => nested.map(product => {
-                return <CartItem product={product} />
+                return <CartItem product={product} quantity={sessionStorage.getItem(product.product_id)} key={product.product_id} />
             }))}
+            <div>
+                <p>Total: £{totalPrice}</p>
+            </div>
         </div>
     )
 
