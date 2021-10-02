@@ -8,6 +8,7 @@ import Register from '../views/register';
 import Login from '../views/login';
 import Category from '../components/category/category';
 import IndividualProduct from '../components/individualProduct/individualProduct';
+import Cart from '../components/cart/cart';
 
 const App = () => {
 
@@ -23,6 +24,7 @@ const App = () => {
                     <Route path='/products' exact component={Products} />
                     <Route path='/products/:category' exact component={Category} />
                     <Route path='/products/:category/:product' exact component={IndividualProduct} />
+                    <Route path='/cart' exact component={Cart} />
                 </Switch>
             </div>
         </Router>
