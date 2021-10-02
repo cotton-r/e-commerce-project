@@ -2,14 +2,13 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadCategoryProducts, selectCategoryProducts } from './categorySlice';
-import { useParams } from "react-router-dom";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Category = () => {
     const dispatch = useDispatch();
     const products = useSelector(selectCategoryProducts);
     const { category } = useParams();
-    
+
     // load all products from database
     useEffect(() => {
         dispatch(loadCategoryProducts(category));

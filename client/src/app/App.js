@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { createBrowserHistory } from "history";
 
 import Home from '../views/home';
 import Products from '../components/products/products';
@@ -9,6 +10,7 @@ import Category from '../components/category/category';
 import IndividualProduct from '../components/individualProduct/individualProduct';
 
 const App = () => {
+
     return (
         <Router>
             <div className='App'>
