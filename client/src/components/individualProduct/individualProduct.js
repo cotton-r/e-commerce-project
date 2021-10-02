@@ -14,8 +14,8 @@ const IndividualProduct = () => {
     // load the single product from database
     useEffect(() => {
         dispatch(loadIndividualProduct(product));
-    }, []);
-    
+    }, [dispatch, product]);
+
     return (
         <div className='page-container'>
             {individualProduct.map((product) => (
