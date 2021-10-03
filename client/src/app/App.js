@@ -9,13 +9,14 @@ import Login from '../views/login';
 import Category from '../components/category/category';
 import IndividualProduct from '../components/individualProduct/individualProduct';
 import Cart from '../components/cart/cart';
+import Nav from '../components/nav/nav';
 
 const App = () => {
 
     return (
         <Router>
             <div className='App'>
-                {/* <Nav /> */}
+                <Nav />
                 <Switch>
                     <Route path='/' exact component={Home} />
                     <Route path='/register' exact component={Register} />
