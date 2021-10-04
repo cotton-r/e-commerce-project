@@ -4,9 +4,12 @@ import { Link, NavLink } from 'react-router-dom';
 const Nav = () => {
 
     const logout = async () => {
-        const response = await fetch('/logout');
-        const json = await response.json();
-        return json;
+        await fetch('/logout', {
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+               }
+        });
     }
 
     return (
@@ -14,7 +17,7 @@ const Nav = () => {
             <p className='title'>The Football Shop</p>
             <div className='nav-links'>
                 <Link to='/login'>
-                    <p>Login</p>
+                    <button>Login</button>
                 </Link>
                 <button onClick={() => logout()}>Logout</button>
             </div>
