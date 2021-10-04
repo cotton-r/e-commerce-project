@@ -6,7 +6,7 @@ loginRouter.post('/', passport.authenticate('local', {
   successRedirect: '/',
   failureRedirect: '/login',
 }), (req, res) => {
-  res.status(201).json(req.user);
-})
+  res.cookie('session', req.user.user_id, { secure: true, signed: true, expires: new Date(Date.now() + 3600) });
+});
 
 module.exports = loginRouter;
