@@ -8,8 +8,9 @@ const Nav = () => {
             headers : { 
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
-               }
-        });
+               },
+        })
+        window.location.href = '/';
     }
 
     return (
