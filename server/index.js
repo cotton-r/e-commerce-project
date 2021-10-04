@@ -21,18 +21,19 @@ initializePassport();
 const app = express();
 
 // config
+app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(flash());
 app.use(session({
+  name: 'currentsession',
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // routes
 app.use('/register', registerRouter);

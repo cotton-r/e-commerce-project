@@ -4,7 +4,7 @@ const passport = require('passport');
 
 logoutRouter.get('/', (req, res) => {
     req.logout();
-    res.status(200).redirect('/');
+    res.clearCookie('currentsession').redirect('/');
 });
 
 module.exports = logoutRouter;
