@@ -6,6 +6,7 @@ const express = require('express');
 const cors = require('cors');
 const flash = require('express-flash');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 const registerRouter = require('./routes/register');
 const productsRouter = require('./routes/products');
@@ -31,6 +32,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cookieParser({ secret: process.env.COOKIE_SECRET }));
 
 // routes
 app.use('/register', registerRouter);
