@@ -32,7 +32,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(cookieParser({ secret: process.env.COOKIE_SECRET }));
+app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // routes
 app.use('/register', registerRouter);

@@ -1,6 +1,8 @@
 const express = require('express');
 const loginRouter = express.Router();
 const passport = require('passport');
+const cookieParser = require('cookie-parser');
+
 
 loginRouter.post('/', passport.authenticate('local', {
   successRedirect: '/',
