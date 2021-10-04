@@ -12,7 +12,7 @@ const Products = () => {
     useEffect(() => {
         dispatch(loadAllProducts());
     }, [dispatch]);
-    
+        
     return (
         <div className='page-container'>
             {allProducts.map((product) => (
