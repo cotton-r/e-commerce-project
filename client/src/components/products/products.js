@@ -12,6 +12,8 @@ const Products = () => {
     useEffect(() => {
         dispatch(loadAllProducts());
     }, [dispatch]);
+
+    console.log(sessionStorage.getItem('session'));
         
     return (
         <div className='page-container'>
