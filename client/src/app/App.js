@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 
@@ -13,15 +13,16 @@ import Nav from '../components/nav/nav';
 
 const App = () => {
 
+    const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem('session') ? true : false);
+
     return (
         <Router>
             <div className='App'>
-                <Nav />
+                <Nav isLoggedIn={isAuthenticated} />
                 <Switch>
                     <Route path='/' exact component={Home} />
                     <Route path='/register' exact component={Register} />
                     <Route path='/login' exact component={Login} />
-                    {/* <Route path='/logout' exact component={Logout} /> */}
                     <Route path='/products' exact component={Products} />
                     <Route path='/products/:category' exact component={Category} />
                     <Route path='/products/:category/:product' exact component={IndividualProduct} />
