@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { logout } from '../../app/App';
 
-const Nav = () => {
+const Nav = ({isLoggedIn}) => {
 
     const logout = async () => {
         await fetch('/logout', {
@@ -11,16 +12,31 @@ const Nav = () => {
                },
         })
         window.location.href = '/';
-    }
+        sessionStorage.removeItem('session');
+    };
+
+    const isUserLoggedIn = () => {
+        if (isLoggedIn) {
+            return <button onClick={() => logout()}>Logout</button>
+        } else {
+            return (
+                <div className='nav-links'>
+                    <Link to='/login'>
+                        <button>Login</button>
+                    </Link>
+                    <Link to='/register'>
+                        <button>Sign up</button>
+                    </Link>
+                </div>
+            );
+        }
+    };
 
     return (
         <nav className='nav-bar'>
             <p className='title'>The Football Shop</p>
-            <div className='nav-links'>
-                <Link to='/login'>
-                    <button>Login</button>
-                </Link>
-                <button onClick={() => logout()}>Logout</button>
+            <div>
+                {isUserLoggedIn()}                
             </div>
         </nav>
     );
