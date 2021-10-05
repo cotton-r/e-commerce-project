@@ -36,7 +36,9 @@ const Nav = ({isLoggedIn}) => {
 
     return (
         <nav className='nav-bar'>
-            <p className='title'>The Football Shop</p>
+            <Link to='/'>
+                <h1 className='nav-title'>The Football Shop</h1>
+            </Link>
             <div>
                 {isUserLoggedIn()}                
             </div>
