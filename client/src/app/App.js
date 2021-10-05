@@ -11,6 +11,8 @@ import IndividualProduct from '../components/individualProduct/individualProduct
 import Cart from '../components/cart/cart';
 import Nav from '../components/nav/nav';
 
+import '../styles/app.css';
+
 const App = () => {
 
     const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem('session') ? true : false);

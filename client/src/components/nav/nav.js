@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { logout } from '../../app/App';
 
+import '../../styles/nav.css';
+
 const Nav = ({isLoggedIn}) => {
 
     const logout = async () => {
