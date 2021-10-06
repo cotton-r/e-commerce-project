@@ -6,6 +6,7 @@
     align-items: center;
     padding: 0px 20px;
     box-shadow: 0 8px 10px -8px rgba(0,0,0,.2);
+    background-color: #f0f0f0;
 }
 
 .nav-title:after {
@@ -15,6 +16,26 @@
     background-color: #000;
 }
 
-.nav-title {
-    
+.nav-links {
+    display: flex;
+}
+
+.nav-links button {
+    border-style: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.nav-links span:after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #000;
+    width: 0px;
+}
+
+.nav-links button:hover span:after {
+    width: 100%;
+    transition: 0.4s;
+    transition-timing-function: ease;
 }

@@ -10,10 +10,27 @@ const Home = () => {
 
     return (
         <div className='homepage-container' id='page'>
-            <div className='layer'>
+            <div className='all-products-tile'>
                 <Link to='/products'>
                     <button className='home-button' onMouseEnter={hover}><span>View Products</span></button>
                 </Link>
+            </div>
+            <div className='other-tiles'>
+                <div className='boots-tile sub-tile'>
+                    <Link to='/products/boots'>
+                        <button className='home-button' onMouseEnter={hover}><span>Boots</span></button>
+                    </Link>
+                </div>
+                <div className='footballs-tile sub-tile'>
+                    <Link to='/products/footballs'>
+                        <button className='home-button' onMouseEnter={hover}><span>Footballs</span></button>
+                    </Link>
+                </div>
+                <div className='kits-tile sub-tile'>
+                    <Link to='/products/kits'>
+                        <button className='home-button' onMouseEnter={hover}><span>Kits</span></button>
+                    </Link>
+                </div>
             </div>
         </div>
     );
