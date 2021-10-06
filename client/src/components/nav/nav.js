@@ -19,15 +19,16 @@ const Nav = ({isLoggedIn}) => {
 
     const isUserLoggedIn = () => {
         if (isLoggedIn) {
-            return <button onClick={() => logout()}>Logout</button>
+            return <button onClick={() => logout()}><span>Logout</span></button>
         } else {
             return (
                 <div className='nav-links'>
                     <Link to='/login'>
-                        <button>Login</button>
+                        <button><span>Login</span></button>
                     </Link>
+                    <p>|</p>
                     <Link to='/register'>
-                        <button>Sign up</button>
+                        <button><span>Sign up</span></button>
                     </Link>
                 </div>
             );
@@ -39,7 +40,7 @@ const Nav = ({isLoggedIn}) => {
             <Link to='/'>
                 <h1 className='nav-title'>The Football Shop</h1>
             </Link>
-            <div>
+            <div className='nav-links'>
                 {isUserLoggedIn()}                
             </div>
         </nav>
