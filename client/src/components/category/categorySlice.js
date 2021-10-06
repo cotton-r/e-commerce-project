@@ -16,6 +16,7 @@ export const categorySlice = createSlice({
     extraReducers: {
         [loadCategoryProducts.pending]: (state, action) => {
             state.loadCategoryProductsStatus = 'loading';
+            state.categoryProducts = [];
         },
         [loadCategoryProducts.fulfilled]: (state, action) => {
             state.loadCategoryProductsStatus = 'succeeded';

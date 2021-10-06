@@ -16,6 +16,7 @@ export const individualProductSlice = createSlice({
     extraReducers: {
         [loadIndividualProduct.pending]: (state, action) => {
             state.loadindividualProductStatus = 'loading';
+            state.individualProduct = [];
         },
         [loadIndividualProduct.fulfilled]: (state, action) => {
             state.loadindividualProductStatus = 'succeeded';
