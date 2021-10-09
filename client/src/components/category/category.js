@@ -15,15 +15,25 @@ const Category = () => {
     }, [dispatch, category]);
     
     return (
-        <div className='page-container'>
+        <div className='products-page-container'>
             {products.map((product) => (
                 <Link to={`/products/${product.category_name}/${encodeURIComponent(product.product_name)}`}>
-                    <div key={product.product_id}>
-                        <p>{product.product_name}</p>
-                        <p>{product.price}</p>
+                    <div className='product-tile' key={product.product_id}>
+                        <div className='product-tile-wrapper'>
+                            <div className='image-container'>
+                                <img src={product.image} alt={product.product_name} height='auto' width='280px'/>
+                            </div>
+                            <div className='title-wrapper'>
+                                <p>{product.product_name}</p>
+                            </div>
+                            <p className='product-tile-price'>£{product.price}</p>
+                        </div>
                     </div>
                 </Link>
             ))}
+            <div className='filling-empty-space-childs'></div>
+            <div className='filling-empty-space-childs'></div>
+            <div className='filling-empty-space-childs'></div>
         </div>
     );
 };
