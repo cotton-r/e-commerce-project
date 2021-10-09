@@ -1,3 +1,9 @@
+.filling-empty-space-childs { /* hacky, but works great */
+    width: 280px; /*the width of the images in this example*/
+    height: 0; /*Important! for the divs to collapse should they fall in a new row*/
+    margin: 10px;
+}
+
 .image-container {
     max-width: 280px;
     height: 280px;
@@ -23,6 +29,7 @@
     border-radius: 6px;
     -webkit-box-shadow: 0px 5px 9px 4px rgba(0,0,0,0.22); 
     box-shadow: 0px 5px 9px 4px rgba(0,0,0,0.22);
+    margin-bottom: 30px;
 }
 
 .products-page-container {
@@ -30,6 +37,10 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding-top: 20px;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
 }
 
 .title-wrapper {
