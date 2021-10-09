@@ -28,16 +28,6 @@ const Products = () => {
                                 <p>{product.product_name}</p>
                             </div>
                             <p className='product-tile-price'>£{product.price}</p>
-                            <div className='product-tile-button-wrapper'>
-                                <button className='add-to-cart-button' onClick={() => {
-                                    if (!sessionStorage.getItem(JSON.stringify(product.product_id))) {
-                                        sessionStorage.setItem(JSON.stringify(product.product_id), 1);
-                                    } else {
-                                        const i = sessionStorage.getItem(JSON.stringify(product.product_id));
-                                        sessionStorage.setItem(JSON.stringify(product.product_id), Number(i) + 1);
-                                    }
-                                }}>Add to cart</button>
-                            </div>
                         </div>
                     </div>
                 </Link>
