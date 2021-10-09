@@ -42,6 +42,9 @@ const Products = () => {
                     </div>
                 </Link>
             ))}
+            <div className='filling-empty-space-childs'></div>
+            <div className='filling-empty-space-childs'></div>
+            <div className='filling-empty-space-childs'></div>
         </div>
     );
 };
