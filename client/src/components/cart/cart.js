@@ -27,6 +27,12 @@ const Cart = () => {
         setValue({});
     }
 
+    const decreaseQty = (product) => {
+        const i = sessionStorage.getItem(JSON.stringify(product.product_id));
+        sessionStorage.setItem(JSON.stringify(product.product_id), Number(i) - 1);
+        setValue({});
+    }
+
     const newItems = [];
     
     cartItems.forEach(item => {
@@ -45,6 +51,7 @@ const Cart = () => {
                                 quantity={getQuantity(product.product_id)} 
                                 key={product.product_id}
                                 increaseQty={increaseQty}
+                                decreaseQty={decreaseQty}
                             />
                 }))}
             </div>
