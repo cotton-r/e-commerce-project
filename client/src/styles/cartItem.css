@@ -1,0 +1,21 @@
+.cart-item {
+    display: flex;
+}
+
+.cart-item-wrapper {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.cart-item-details {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px 0px 10px 0px;
+}
+
+.cart-item-price {
+    margin-left: auto;
+}
