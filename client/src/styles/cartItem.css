@@ -19,3 +19,41 @@
 .cart-item-price {
     margin-left: auto;
 }
+
+.qty-box {
+    display: flex;
+    align-items: center;
+    width: 80px;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.cart-item-qty {
+    justify-self: flex-end;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.qty-box button {
+    width: 40px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.1rem;
+    background-color: #fff;
+}
+
+.qty-box button:first-child {
+    font-size: 1.6rem;
+}
+
+.qty-box button:hover {
+    cursor: pointer;
+}
+
+.qty-box p {
+    width: 20px;
+    text-align: center;
+}
