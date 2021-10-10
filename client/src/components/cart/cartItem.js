@@ -4,7 +4,7 @@ import '../../styles/cartItem.css';
 
 const CartItem = (props) => {
 
-    const { product, quantity } = props;
+    const { product, quantity, increaseQty } = props;
 
     return (
         <div className='cart-item-wrapper'>
@@ -14,6 +14,9 @@ const CartItem = (props) => {
                         <div className='cart-item-details'>
                             <p className='cart-item-name'>{product.product_name}</p>
                             <p className='cart-item-qty'>Quantity: {quantity}</p>
+                            <button onClick={() => {
+                                increaseQty(product)
+                            }}></button>
                         </div>
                         <p className='cart-item-price'>£{product.price}</p>
                     </div>
