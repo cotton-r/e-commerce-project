@@ -1,17 +1,21 @@
 import React from 'react';
 
+import '../../styles/cartItem.css';
+
 const CartItem = (props) => {
 
     const { product, quantity } = props;
 
     return (
-        <div className='cartItem'>
+        <div className='cart-item-wrapper'>
             {
-                    <div key={product.product_id}>
-                        <img src={product.image} alt={product.product_name} height='70px' width='auto' />
-                        <p>{product.product_name}</p>
-                        <p>{product.price}</p>
-                        <p>{quantity}</p>
+                    <div className='cart-item' key={product.product_id}>
+                        <img className='cart-image' src={product.image} alt={product.product_name} width='170px' height='auto' />
+                        <div className='cart-item-details'>
+                            <p className='cart-item-name'>{product.product_name}</p>
+                            <p className='cart-item-qty'>Quantity: {quantity}</p>
+                        </div>
+                        <p className='cart-item-price'>£{product.price}</p>
                     </div>
             }
         </div>

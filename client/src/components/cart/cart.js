@@ -3,6 +3,8 @@ import { connectAdvanced, useDispatch, useSelector } from 'react-redux';
 import { loadAllProducts, selectProducts } from '../products/productsSlice';
 import CartItem from './cartItem';
 
+import '../../styles/cart.css';
+
 const Cart = () => {
     const dispatch = useDispatch();
     const allProducts = useSelector(selectProducts);
@@ -27,12 +29,28 @@ const Cart = () => {
     newItems.forEach(nested => nested.forEach(item => totalPrice += Number(item.price) * sessionStorage.getItem(item.product_id)));
 
     return (
-        <div>
-            {newItems.map(nested => nested.map(product => {
-                return <CartItem product={product} quantity={sessionStorage.getItem(product.product_id)} key={product.product_id} />
-            }))}
-            <div>
-                <p>Total: £{totalPrice}</p>
+        <div className='cart-container'>
+            <div className='cart-items-section'>
+                {newItems.map(nested => nested.map(product => {
+                    return <CartItem product={product} quantity={sessionStorage.getItem(product.product_id)} key={product.product_id} />
+                }))}
+            </div>
+            <div className='cart-total'>
+                <div className='costs'>
+                    <div className='price-row'>
+                        <p>Subtotal:</p>
+                        <p>£{Number(totalPrice).toFixed(2)}</p>
+                    </div>
+                    <div className='price-row'>
+                        <p>Delivery charge:</p>
+                        <p>£0.00</p>
+                    </div>
+                    <div className='price-row final-price'>
+                        <p>Total:</p>
+                        <p>£{Number(totalPrice).toFixed(2)}</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     )
