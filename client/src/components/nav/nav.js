@@ -42,11 +42,12 @@ const Nav = ({isLoggedIn}) => {
             </Link>
             <div className='nav-menu'>
                 <div className='dropdown'>
-                    <button className='dropbtn'><span>Products</span></button>
+                    <button className='dropbtn'><span>Products</span><i class="fi fi-rr-angle-small-down"></i></button>
                     <div className='dropdown-content'>
                         <Link to='/products/boots'><a>Boots</a></Link>
                         <Link to='/products/footballs'><a>Footballs</a></Link>
                         <Link to='/products/kits'><a>Kits</a></Link>
+                        <Link to='/products'><a>All products</a></Link>
                     </div>
                 </div>
                 <Link to='/'><a><span>About us</span></a></Link>
