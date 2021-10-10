@@ -50,7 +50,9 @@ const Cart = () => {
                         <p>£{Number(totalPrice).toFixed(2)}</p>
                     </div>
                 </div>
-
+                <div className='checkout-btn-wrapper'>
+                    <button className='checkout-btn'>Checkout</button>
+                </div>
             </div>
         </div>
     )
