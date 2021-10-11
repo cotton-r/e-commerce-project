@@ -51,7 +51,7 @@ const Nav = ({isLoggedIn}) => {
                     </div>
                 </div>
                 <Link to='/'><a><span>About us</span></a></Link>
-                <Link to='/cart'><a><span>Cart</span></a></Link>
+                <Link to='/cart'><a className='cart-nav'><span>Cart</span>{sessionStorage.length > 0 ? <span className='cart-count'>{sessionStorage.length}</span> : null}</a></Link>
             </div>
             <div className='nav-links'>
                 {isUserLoggedIn()}                
