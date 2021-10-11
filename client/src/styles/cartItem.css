@@ -16,8 +16,12 @@
     padding: 0px 0px 10px 0px;
 }
 
-.cart-item-price {
+.cart-final-column {
     margin-left: auto;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .qty-box {
@@ -57,3 +61,19 @@
     width: 20px;
     text-align: center;
 }
+
+#delete-button {
+    background-image: url(../resources/images/bin.png);
+    background-position: center;
+    background-size: cover;
+    height: 22px;
+    width: 22px;
+    border: none;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+#delete-button:hover {
+    cursor: pointer;
+}
+

@@ -112,3 +112,19 @@
     transition: 0.3s;
     transition-timing-function: ease;
 }
+
+.cart-nav {
+    display: flex;
+}
+
+.cart-count {
+    font-size: 0.8rem;
+    margin-left: 5px;
+    background-color: rgb(199, 0, 0);
+    height: 15px;
+    width: 15px;
+    padding-left: 3px;
+    padding-bottom: 16px;
+    border-radius: 50%;
+    color: white;
+}
