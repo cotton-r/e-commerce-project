@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { loadIndividualProduct, selectIndividualProduct } from './individualProductSlice';
 import '../../styles/individualProduct.css';
 
-const IndividualProduct = () => {
+const IndividualProduct = ({changeValue}) => {
     const dispatch = useDispatch();
     const { product } = useParams();
     const individualProduct = useSelector(selectIndividualProduct);
@@ -34,9 +34,11 @@ const IndividualProduct = () => {
                             <button className='add-to-cart-button' onClick={() => {
                                 if (!sessionStorage.getItem(JSON.stringify(product.product_id))) {
                                     sessionStorage.setItem(JSON.stringify(product.product_id), 1);
+                                    changeValue({});
                                 } else {
                                     const i = sessionStorage.getItem(JSON.stringify(product.product_id));
                                     sessionStorage.setItem(JSON.stringify(product.product_id), Number(i) + 1);
+                                    changeValue({});
                                 }
                             }}>Add to cart</button>
                         </div>
