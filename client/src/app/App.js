@@ -17,6 +17,8 @@ const App = () => {
 
     const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem('session') ? true : false);
 
+    const [value, setValue] = useState();
+
     return (
         <Router>
             <div className='App'>
@@ -27,8 +29,8 @@ const App = () => {
                     <Route path='/login' exact component={Login} />
                     <Route path='/products' exact component={Products} />
                     <Route path='/products/:category' exact component={Category} />
-                    <Route path='/products/:category/:product' exact component={IndividualProduct} />
-                    <Route path='/cart' exact component={Cart} />
+                    <Route path='/products/:category/:product' exact component={() => (<IndividualProduct changeValue={setValue} />)} />
+                    <Route path='/cart' exact component={() => (<Cart changeValue={setValue} />)} />
                 </Switch>
             </div>
         </Router>
