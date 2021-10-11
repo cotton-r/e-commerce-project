@@ -5,11 +5,11 @@ import CartItem from './cartItem';
 
 import '../../styles/cart.css';
 
-const Cart = () => {
+const Cart = ({changeValue}) => {
     const dispatch = useDispatch();
     const allProducts = useSelector(selectProducts);
 
-    const [value, setValue] = useState();
+    const [state, setState] = useState();
 
     useEffect(() => {
         dispatch(loadAllProducts());
@@ -24,14 +24,22 @@ const Cart = () => {
     const increaseQty = (product) => {
         const i = sessionStorage.getItem(JSON.stringify(product.product_id));
         sessionStorage.setItem(JSON.stringify(product.product_id), Number(i) + 1);
-        setValue({});
+        setState({});
+        changeValue({});
     }
 
     const decreaseQty = (product) => {
         const i = sessionStorage.getItem(JSON.stringify(product.product_id));
         sessionStorage.setItem(JSON.stringify(product.product_id), Number(i) - 1);
-        setValue({});
+        setState({});
+        changeValue({});
     }
+
+    const removeItem = (product) => {
+        sessionStorage.removeItem(JSON.stringify(product.product_id));
+        setState({});
+        changeValue({});
+    };
 
     const newItems = [];
     
@@ -52,6 +60,7 @@ const Cart = () => {
                                 key={product.product_id}
                                 increaseQty={increaseQty}
                                 decreaseQty={decreaseQty}
+                                removeItem={removeItem}
                             />
                 }))}
             </div>
