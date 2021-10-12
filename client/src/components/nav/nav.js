@@ -41,6 +41,7 @@ const Nav = ({isLoggedIn}) => {
                 <h1 className='nav-title'>The Football Shop</h1>
             </Link>
             <div className='nav-menu'>
+                <Link to='/'><span>Home</span></Link>
                 <div className='dropdown'>
                     <button className='dropbtn'><span>Products</span><i class="fi fi-rr-angle-small-down"></i></button>
                     <div className='dropdown-content'>
@@ -50,7 +51,6 @@ const Nav = ({isLoggedIn}) => {
                         <Link to='/products'><a>All products</a></Link>
                     </div>
                 </div>
-                <Link to='/'><a><span>About us</span></a></Link>
                 <Link to='/cart'><a className='cart-nav'><span>Cart</span>{sessionStorage.length > 0 ? <p className='cart-count'>{sessionStorage.length}</p> : null}</a></Link>
             </div>
             <div className='nav-links'>
