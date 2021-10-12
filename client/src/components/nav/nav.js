@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { logout } from '../../app/App';
 
 import '../../styles/nav.css';
 
 const Nav = ({isLoggedIn}) => {
+
+    const [classname, setClassname] = useState('inner-dropdown');
+    
+    const toggleInnerDropdown = () => {
+        if (classname === 'inner-dropdown') {
+            setClassname('inner-dropdown-toggle')
+        } else {
+            setClassname('inner-dropdown')
+        }
+    };
 
     const logout = async () => {
         await fetch('/logout', {
