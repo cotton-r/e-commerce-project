@@ -30,9 +30,12 @@ const Cart = ({changeValue}) => {
 
     const decreaseQty = (product) => {
         const i = sessionStorage.getItem(JSON.stringify(product.product_id));
-        sessionStorage.setItem(JSON.stringify(product.product_id), Number(i) - 1);
-        setState({});
-        changeValue({});
+        if (i > 1) {
+            sessionStorage.setItem(JSON.stringify(product.product_id), Number(i) - 1);
+            setState({});
+            changeValue({});
+        }
+        
     }
 
     const removeItem = (product) => {

@@ -20,7 +20,7 @@ const CartItem = (props) => {
                                 }}>
                                     -
                                 </button>
-                                <p>{quantity}</p>
+                                <p>{ quantity < 2 ? 1 : quantity }</p>
                                 <button id='plus-btn' onClick={() => {
                                     increaseQty(product)
                                 }}>
