@@ -164,5 +164,13 @@
     .nav-bar {
         display: none;
     }
+    
+    .nav-links button {
+        background-color: #f8f9fa;
+    }
+    
+    .nav-links span:after {
+        height: 0px;
+    }
 }
 
