@@ -9,8 +9,9 @@ import Login from '../views/login';
 import Category from '../components/category/category';
 import IndividualProduct from '../components/individualProduct/individualProduct';
 import Cart from '../components/cart/cart';
-import Nav from '../components/nav/nav';
+import Navigation from '../components/nav/nav';
 
+import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/app.css';
 
 const App = () => {
@@ -22,7 +23,7 @@ const App = () => {
     return (
         <Router>
             <div className='App'>
-                <Nav isLoggedIn={isAuthenticated} />
+                <Navigation isLoggedIn={isAuthenticated} />
                 <Switch>
                     <Route path='/' exact component={Home} />
                     <Route path='/register' exact component={Register} />
