@@ -154,6 +154,10 @@
     font-size: 1.4rem;
 }
 
+.navbar-brand {
+    margin-left: 15px;
+}
+
 
 
 @media only screen and (max-width: 844px) {
