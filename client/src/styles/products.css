@@ -35,6 +35,10 @@
     left: 0px;
 }
 
+.product-tile:hover {
+    color: #000;
+}
+
 .products-page-container {
     display: flex;
     flex-wrap: wrap;
