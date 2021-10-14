@@ -18,10 +18,10 @@ const IndividualProduct = ({changeValue}) => {
     return (
         <div className='individual-product-container'>
             {individualProduct.map((product) => (
-                <div> 
+                <div className='individual-product-box'> 
                     <p className='individual-product-name'>{product.product_name}</p>
                     <div className='individual-product-wrapper'>
-                        <div>    
+                        <div className='individual-product-image'>    
                             <img src={product.image} alt={product.product_name} width='560px' height='auto'/>
                         </div>
                         <div className='individual-product-details'>
