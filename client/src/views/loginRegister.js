@@ -137,6 +137,26 @@ const LoginRegister = () => {
                         </div>
                     </div>
                 </div>
+                <div className='overlay-container-mobile'>
+                    <div className="overlay">
+                        <div className="overlay-panel overlay-left">
+                            <button 
+                                className="ghost" 
+                                id="signIn"
+                                onClick={() => setSignUp(false)}
+                            >Sign In</button>
+                            <i class="fi fi-rr-angle-right" id='right-arrow' onClick={() => setSignUp(false)}></i>
+                        </div>
+                        <div className="overlay-panel overlay-right">
+                            <i class="fi fi-rr-angle-left" id='left-arrow' onClick={() => setSignUp(true)}></i>
+                            <button 
+                                className="ghost" 
+                                id="signUp"
+                                onClick={() => setSignUp(true)}
+                            >Sign Up</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
