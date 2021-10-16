@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { propTypes } from 'react-bootstrap/esm/Image';
+import { Link, useLocation } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
 import '../styles/loginRegister.css';
 
 const LoginRegister = () => {
 
-    const [isSignUp, setSignUp] = useState(true);
+    let props = useLocation();
+
+    const [isSignUp, setSignUp] = useState(props.state.isSignUp);
+
+    
+
+    
 
     const cookies = new Cookies();
 
