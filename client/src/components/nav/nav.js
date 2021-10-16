@@ -81,17 +81,17 @@ const Navigation = ({isLoggedIn}) => {
                         </LinkContainer>
                         <NavDropdown title='Products' id='basic-nav-dropdown'>
                             <NavDropdown.Item>
-                                <LinkContainer to="/boots">
+                                <LinkContainer to="/products/boots">
                                     <Nav.Link>Boots</Nav.Link>
                                 </LinkContainer>
                             </NavDropdown.Item>
                             <NavDropdown.Item>
-                                <LinkContainer to="/footballs">
+                                <LinkContainer to="/products/footballs">
                                     <Nav.Link>Footballs</Nav.Link>
                                 </LinkContainer>
                             </NavDropdown.Item>
                             <NavDropdown.Item>
-                                <LinkContainer to="/kits">
+                                <LinkContainer to="/products/kits">
                                     <Nav.Link>Kits</Nav.Link>
                                 </LinkContainer>
                             </NavDropdown.Item>
