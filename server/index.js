@@ -51,6 +51,6 @@ app.get('/', (req, res) => {
 });
 
 // start server
-app.listen(process.env.PORT || 3002, () => {
+app.listen(process.env.PORT || 80, () => {
   console.log('Server listening')
 });
