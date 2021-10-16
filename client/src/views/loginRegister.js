@@ -112,7 +112,7 @@ const LoginRegister = () => {
                 <div className='overlay-container'>
                     <div className="overlay">
                         <div className="overlay-panel overlay-left">
-                            <h1>Hello, Friend!</h1>
+                            <h1>Hello!</h1>
                             <p>Enter your personal details to register
                                 <br/><br/>
                                 Already have an account? Sign in below
