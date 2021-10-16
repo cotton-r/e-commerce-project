@@ -6,8 +6,8 @@
     justify-content: center;
     align-items: center;
     background: #ff416c;
-    background: -webkit-linear-gradient(to right, #44574c, #18201c);
-    background: linear-gradient(to right, #44574c, #18201c);
+    background: -webkit-linear-gradient(to right, #133346, #072e42);
+    background: linear-gradient(to right, #133346, #072e42);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
@@ -54,8 +54,8 @@
 
 .container button {
     border-radius: 20px;
-    border: 1px solid #418a54;
-    background-color: #418a54;
+    border: 1px solid #0c4566;
+    background-color: #0c4566;
     color: #ffffff;
     font-size: 12px;
     font-weight: bold;
@@ -162,9 +162,9 @@
 }
 
 .overlay {
-    background: #ff416c;
-    background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    background: #021b28;
+    background: -webkit-linear-gradient(to right, #021b28, #052536);
+    background: linear-gradient(to right, #021b28, #052536);
     background-image: url(../resources/images/footballstadium.jpg);
     background-repeat: no-repeat;
     background-size: cover;
