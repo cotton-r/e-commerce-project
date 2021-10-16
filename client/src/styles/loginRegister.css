@@ -13,6 +13,10 @@
     background-position: 0 0;
 }
 
+.overlay .fi {
+    display: none;
+}
+
 .container {
     background-color: #ffffff;
     border-radius: 10px;
@@ -223,10 +227,16 @@
 
     .overlay .fi {
         position: absolute;
+        display: block;
+        margin-top: 5px;
     }
 
     .overlay .fi:hover {
         cursor: pointer;
+    }
+
+    .overlay .fi:active {
+        transform: scale(0.95);
     }
 
     #right-arrow {
