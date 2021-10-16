@@ -35,11 +35,11 @@ const Navigation = ({isLoggedIn}) => {
         } else {
             return (
                 <div className='nav-links'>
-                    <Link to='/login'>
+                    <Link to='/loginregsiter'>
                         <button><span>Login</span></button>
                     </Link>
                     <p>|</p>
-                    <Link to='/register'>
+                    <Link to='/loginregsiter'>
                         <button><span>Sign up</span></button>
                     </Link>
                 </div>

@@ -13,6 +13,7 @@ import Navigation from '../components/nav/nav';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/app.css';
+import LoginRegister from '../views/loginRegister';
 
 const App = () => {
 
@@ -28,6 +29,7 @@ const App = () => {
                     <Route path='/' exact component={Home} />
                     <Route path='/register' exact component={Register} />
                     <Route path='/login' exact component={Login} />
+                    <Route path='/loginregsiter' exact component={LoginRegister} />
                     <Route path='/products' exact component={Products} />
                     <Route path='/products/:category' exact component={Category} />
                     <Route path='/products/:category/:product' exact component={() => (<IndividualProduct changeValue={setValue} />)} />
