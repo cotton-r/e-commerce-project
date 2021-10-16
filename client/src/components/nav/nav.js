@@ -35,11 +35,11 @@ const Navigation = ({isLoggedIn}) => {
         } else {
             return (
                 <div className='nav-links'>
-                    <Link to={{ pathname: '/loginregister', }}>
+                    <Link to={{ pathname: '/loginregister', state: { isSignUp : false } }}>
                         <button><span>Login</span></button>
                     </Link>
                     <p>|</p>
-                    <Link to='/loginregister'>
+                    <Link to={{ pathname: '/loginregister', state: { isSignUp : true } }}>
                         <button><span>Sign up</span></button>
                     </Link>
                 </div>
