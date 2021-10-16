@@ -77,3 +77,36 @@
     cursor: pointer;
 }
 
+.cart-item-name {
+    margin-right: 50px;
+}
+
+@media only screen and (max-width: 766px) {
+    .cart-final-column {
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 463px) {
+    .cart-image {
+        height: 180px;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 415px) {
+    .cart-image {
+        height: 150px;
+        width: auto;
+    }
+
+    .cart-item-details {
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0px 0px 10px 0px;
+        width: 200px;
+    }
+}
+
