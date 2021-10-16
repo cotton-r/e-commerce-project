@@ -25,7 +25,7 @@ const App = () => {
                 <Navigation isLoggedIn={isAuthenticated} />
                 <Switch>
                     <Route path='/' exact component={Home} />
-                    <Route path='/loginregsiter' exact component={LoginRegister} />
+                    <Route path='/loginregister' exact component={LoginRegister} />
                     <Route path='/products' exact component={Products} />
                     <Route path='/products/:category' exact component={Category} />
                     <Route path='/products/:category/:product' exact component={() => (<IndividualProduct changeValue={setValue} />)} />
