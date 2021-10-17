@@ -1,12 +1,9 @@
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
-
 const express = require('express');
 const cors = require('cors');
 const flash = require('express-flash');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const path = require('path');
 
 const registerRouter = require('./routes/register');
 const productsRouter = require('./routes/products');
@@ -19,6 +16,12 @@ const passport = require('passport');
 initializePassport();
 
 const app = express();
+
+if (process.env.NODE_ENV === 'production') {
+  // server static content
+  // npm run build
+  app.use(express.static(path.join(__dirname, 'client/build')));
+};
 
 // config
 app.use(cookieParser(process.env.COOKIE_SECRET));
