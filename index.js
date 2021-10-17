@@ -18,7 +18,7 @@ initializePassport();
 const app = express();
 
 if (process.env.NODE_ENV === 'production') {
-  // server static content
+  // serve static content
   // npm run build
   app.use(express.static(path.join(__dirname, 'client/build')));
 };
@@ -52,6 +52,11 @@ app.use('/logout', logoutRouter);
 app.get('/', (req, res) => {
   return res.status(200).send({'message': 'first endpoint is working!'})
 });
+
+// catchall
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
+})
 
 // start server
 app.listen(process.env.PORT || 80, () => {
