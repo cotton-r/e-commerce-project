@@ -49,8 +49,8 @@
     background-color: #fff;
 }
 
-.qty-box button:first-child {
-    font-size: 1.6rem;
+.qty-box button {
+    font-size: 1rem;
 }
 
 .qty-box button:hover {
@@ -66,8 +66,8 @@
     background-image: url(../resources/images/bin.png);
     background-position: center;
     background-size: cover;
-    height: 22px;
-    width: 22px;
+    height: 1.2rem;
+    width: 1.2rem;
     border: none;
     margin-bottom: 20px;
     margin-left: 15px;
@@ -89,15 +89,19 @@
 
 @media only screen and (max-width: 463px) {
     .cart-image {
-        height: 180px;
-        width: auto;
+        width: 130px;
+        height: auto;
     }
 }
 
 @media only screen and (max-width: 415px) {
     .cart-image {
-        height: 150px;
-        width: auto;
+        width: 110px;
+        height: 130px;
+    }
+
+    .cart-item-name {
+        width: 80%;
     }
 
     .cart-item-details {
