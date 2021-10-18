@@ -32,7 +32,7 @@ const CartItem = (props) => {
                             <p className='cart-item-price'>£{product.price}</p>
                             <button id='delete-button' onClick={() => {
                                 removeItem(product)
-                            }}></button>
+                            }}><img src="https://img.icons8.com/windows/32/000000/trash.png"/></button>
                         </div>
                     </div>
             }

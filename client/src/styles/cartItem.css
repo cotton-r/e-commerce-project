@@ -28,10 +28,10 @@
     display: flex;
     align-items: center;
     width: 80px;
+    height: 30px;
     justify-content: space-between;
     background-color: #fff;
     border-radius: 5px;
-    overflow: hidden;
 }
 
 .cart-item-qty {
@@ -41,7 +41,7 @@
 }
 
 .qty-box button {
-    width: 40px;
+    width: 30px;
     border: none;
     border-radius: 5px;
     text-align: center;
@@ -49,28 +49,26 @@
     background-color: #fff;
 }
 
-.qty-box button {
-    font-size: 1rem;
+.qty-box p {
+    width: 20px;
+    text-align: center;
 }
 
 .qty-box button:hover {
     cursor: pointer;
 }
 
-.qty-box p {
-    width: 20px;
-    text-align: center;
+#delete-button {
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    height: 32px;
+    width: 50px;
 }
 
-#delete-button {
-    background-image: url(../resources/images/bin.png);
-    background-position: center;
-    background-size: cover;
-    height: 1.2rem;
-    width: 1.2rem;
-    border: none;
-    margin-bottom: 20px;
-    margin-left: 15px;
+#delete-button img {
+    height: 24px;
+    width: 24px;
 }
 
 #delete-button:hover {
