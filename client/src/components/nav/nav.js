@@ -71,7 +71,7 @@ const Navigation = ({isLoggedIn}) => {
                 </div>
             </nav>
 
-            <Navbar bg='light' expand='lg' id='mobile-nav'>
+            <Navbar bg='light' expand='lg' id='mobile-nav' className='navbar-fixed-top sticky-nav' style={{position: 'fixed'}}>
                 <Navbar.Brand href='/'>The Football Shop</Navbar.Brand>
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
                 <Navbar.Collapse id='basic-navbar-nav'>

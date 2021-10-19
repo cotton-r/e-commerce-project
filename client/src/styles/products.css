@@ -103,6 +103,13 @@
     }
 }
 
+@media only screen and (max-width: 844px) {
+    .products-page-container {
+        position: sticky;
+        margin-top: 57px;
+    }
+}
+
 @media only screen and (max-width: 578px) {
     .filling-empty-space-childs {
         width: 220px;

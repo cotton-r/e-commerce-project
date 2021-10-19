@@ -22,7 +22,7 @@
 
 .nav-links button {
     border-style: none;
-    background-color: #f0f0f0;
+    background-color: #f1f1f1;
     cursor: pointer;
 }
 
@@ -158,11 +158,28 @@
     margin-left: 15px;
 }
 
+.navbar-collapse {
+    background-color: #f8f9fa;
+    margin-right: -10px;
+    margin-top: 9px;
+}
+
+.sticky-nav {
+    position: sticky;
+    top: 0; 
+}
 
 
 @media only screen and (max-width: 844px) {
     #mobile-nav {
         display: flex !important;
+        position: sticky;
+        z-index: 100;
+        width: 100vw;
+        padding-right: 10px;
+        min-height: 63px !important;
+        margin-top: 0px;
+        z-index: 100;
     }
 
     .nav-bar {
